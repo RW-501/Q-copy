@@ -1,4 +1,23 @@
 
+// Get the cookie value using regular expressions
+var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)loggedIn\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+
+// Check if the user is logged in
+if (cookieValue === 'true') {
+  // User is logged in
+  console.log('User is logged in');
+var loggedIn = true;
+	
+} else {
+  // User is not logged in
+  console.log('User is not logged in');
+	var loggedIn = false;
+
+}
+
+
+
+
 
 
 // load.js
@@ -717,7 +736,7 @@ window.signInWithGoogle = function() {
       // Check if the user has already transferred the data
       if (!userInfo.transferToEmail) {
         if (userInfo.points > 0) {
-          if (confirm('Would you like to transfer the current userInfo to emailUserInfo?')) {
+          if (confirm('Would you like to transfer the Local user Online?')) {
             const email = prompt('Please enter your email address:');
             transferAccountToEmailUserInfo(userInfo, email);
             userInfo.transferToEmail = true; // Mark the transfer as completed
@@ -745,6 +764,8 @@ window.signInWithGoogle = function() {
       console.log('errorMessage:', errorMessage);
       // Set the logged-in cookie
       document.cookie = 'loggedIn=false';
+	  loggedIn = false;
+
     });
 };
 
@@ -762,7 +783,7 @@ window.signInWithFacebook = function() {
       // Check if the user has already transferred the data
       if (!userInfo.transferToEmail) {
         if (userInfo.points > 0) {
-          if (confirm('Would you like to transfer the current userInfo to emailUserInfo?')) {
+          if (confirm('Would you like to transfer the Local user Online?')) {
             const email = prompt('Please enter your email address:');
             transferAccountToEmailUserInfo(userInfo, email);
             userInfo.transferToEmail = true; // Mark the transfer as completed
@@ -790,6 +811,8 @@ window.signInWithFacebook = function() {
       console.log('errorMessage:', errorMessage);
       // Set the logged-in cookie
       document.cookie = 'loggedIn=false';
+	   loggedIn = false;
+
     });
 };
 
@@ -826,7 +849,7 @@ window.signInWithUserWithEmailAndPassword = function(event) {
       // Check if the user has already transferred the data
       if (!userInfo.transferToEmail) {
         if (userInfo.points > 0) {
-          if (confirm('Would you like to transfer the current userInfo to emailUserInfo?')) {
+          if (confirm('Would you like to transfer the Local user Online?')) {
             const email = prompt('Please enter your email address:');
             transferAccountToEmailUserInfo(userInfo, email);
             userInfo.transferToEmail = true; // Mark the transfer as completed
@@ -853,6 +876,8 @@ window.signInWithUserWithEmailAndPassword = function(event) {
       showStatusMessage(errorMessage, 'error');
       // Set the logged-in cookie
       document.cookie = 'loggedIn=false';
+	   loggedIn = false;
+
     });
 };
 
@@ -943,6 +968,7 @@ window.createUserWithEmailAndPassword = function (event) {
       const errorMessage = error.message;
       showStatusMessage(errorMessage, 'error');
       document.cookie = 'loggedIn=false';
+	  loggedIn = false;
 
       throw error;
     });
@@ -997,7 +1023,8 @@ function onAuthSuccess(userInfo) {
 	
   // Call checkUserInfoChanges() after successful login
       checkUserInfoChanges();
-	
+		  loggedIn = true;
+
   // Example: Display a welcome message to the user
   console.log('Welcome, ' + userInfo.userName + '!');
 
@@ -1005,13 +1032,7 @@ function onAuthSuccess(userInfo) {
 // window.location.href = '/dashboard.html';
 
   // Example: Update the UI to show the user as logged in
-  const loginButton = document.getElementById('loginButton');
-  const signupButton = document.getElementById('signupButton');
-  const dashboardLink = document.getElementById('dashboardLink');
 
-  loginButton.style.display = 'none';
-  signupButton.style.display = 'none';
-  dashboardLink.style.display = 'block';
 	
 	  document.getElementById('loginPopup').classList.add('d-none');
 
@@ -1034,18 +1055,7 @@ fetch('./elements/navbar.html')
 
 	
 	
-		
-var Loggedin = document.cookie.split('; ').find(row => row.startsWith('loggedIn=')).split('=')[1];
-	
-	// Check if user is logged in
-  if (Loggedin == 'true') {
- console.log("Logged In"); 
 
-  }else{
-	 console.log("Logged Out"); 
-  
-  }
-		
 		
 
       const navUserInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -1053,17 +1063,15 @@ var Loggedin = document.cookie.split('; ').find(row => row.startsWith('loggedIn=
   document.getElementById('profile-pic').src = navUserInfo.profilePic;
    
 	
-	var cookieValue = document.cookie.split('; ').find(row => row.startsWith('loggedIn=')).split('=')[1];
 
 	// Check if user is logged in
-  if (cookieValue == 'true') {
+  if (loggedIn == 'true') {
     // User is logged in
     document.getElementById('navLoggedin').innerHTML = "<div onclick=\"logOutFunction()\">Log Out</div>";
   } else {
     // User is not logged in
     document.getElementById('navLoggedin').innerHTML = "<div onclick=\"openPopup()\">Log In</div>";
   }
-    console.log("cookieValue: ", cookieValue);
 
 
 // Log out function
@@ -1072,6 +1080,7 @@ function logOutFunction() {
     // Log out successful
       // Set the logged-in cookie
       document.cookie = 'loggedIn=false';
+	  loggedIn = false;
 	  console.log("User logged out.");
   }).catch(function(error) {
     // An error occurred
