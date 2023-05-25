@@ -425,6 +425,53 @@ function isSameDay(date1, date2) {
 
 
 		
+// Function to open the login/signup popup
+function openPopup() {
+  document.getElementById('loginPopup').classList.remove('d-none');
+}
+
+// Function to close the login/signup popup
+function closePopup() {
+  document.getElementById('loginPopup').classList.add('d-none');
+}
+
+// Function to switch between login and signup tabs
+function switchTab(tabName) {
+  document.getElementById('loginTab').style.display = tabName === 'login' ? 'block' : 'none';
+  document.getElementById('signupTab').style.display = tabName === 'signup' ? 'block' : 'none';
+}
+
+// Fetch the popup HTML dynamically and append it to the signupLoginArea element
+fetch('./auth/index.html')
+  .then(response => response.text())
+  .then(data => {
+    const signupLoginArea = document.querySelector('#signupLoginArea');
+	signupLoginArea.innerHTML += data;
+signupLoginArea.display = "none";
+  });
+
+
+
+
+
+
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC8PYJV5-E6hIYbElsgb5e7MOS0faCiLM4",
+  authDomain: "quizzatopia-bdfc9.firebaseapp.com",
+  projectId: "quizzatopia-bdfc9",
+  storageBucket: "quizzatopia-bdfc9.appspot.com",
+  messagingSenderId: "828105067102",
+  appId: "1:828105067102:web:76afb989ed7c03ebb542cf",
+  measurementId: "G-J3QK9V5480"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the Firestore database
+const firestore = firebase.firestore();
+
+		
 	
 
 
