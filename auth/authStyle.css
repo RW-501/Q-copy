@@ -1,0 +1,236 @@
+
+
+
+  /* Styling for the login/signup popup */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    width: 400px;
+  }
+
+  .close-btn {
+    text-align: right;
+  }
+
+  .close-btn button {
+    border: none;
+    background-color: transparent;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .close-btn button:hover {
+    color: #333;
+  }
+
+.status-bar {
+  margin-top: 20px;
+  padding: 5px;
+    text-align: center;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+      height: 60px !IMPORTANT;
+}
+
+.status-bar span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.status-bar.success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.status-bar.error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+
+
+
+
+
+
+
+
+
+.tabs {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.tabs button:hover {
+  background-color: #e6e6e6;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Additional Styling */
+
+.tabs {
+  position: relative;
+}
+
+.tabs::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.tabs button {
+  position: relative;
+  z-index: 1;
+}
+
+.tabs button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tabs button.active::before {
+  opacity: 1;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+
+  area {
+    margin-bottom: 20px;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #3b5998;
+  }
+
+  button[name="send"],
+  .social-login button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+
+  button[name="send"]:hover,
+  .social-login button:hover {
+    background-color: #344e86;
+  }
+
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-login button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #db4437;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+.social-login button:nth-child(2):hover {
+  background-color: #0d6efa;
+}
+  .social-login button:nth-child(2) {
+    background-color: #0d6efd;
+  }
+
+  .social-login button:hover {
+    background-color: #344e86;
+  }
+

@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <script>
+// Function to apply the overlay to each direct child of body
+function applyOverlay() {
+  const bodyChildren = document.body.children;
+
+  // Loop through the direct children of body
+  for (let i = 0; i < bodyChildren.length; i++) {
+    const child = bodyChildren[i];
+
+    // Create the overlay element for each child
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+
+    // Append the overlay to the child
+    child.appendChild(overlay);
+  }
+}
+
+// Function to remove the overlay from each direct child of body
+function removeOverlay() {
+  const overlays = document.querySelectorAll('.overlay');
+
+  // Loop through the overlays and remove them
+  overlays.forEach((overlay) => {
+    overlay.parentNode.removeChild(overlay);
+  });
+}
+
+// Apply the overlay when the DOM content is loaded
+document.addEventListener('DOMContentLoaded', applyOverlay);
+
+// Remove the overlay when the page is fully loaded
+window.addEventListener('load', removeOverlay);
+
+
+</script>
+
+	  <meta charset="utf-8" /> <!-- Character encoding for the webpage -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Required for Internet Explorer compatibility -->
+
+<!-- Metadata for search engines -->
+<title>Welcome to Quizzatopia - Explore a World of Quizzes</title>
+<meta name="generator" content="Quizzatopia" /> 
+<meta name="description" content="Welcome to Quizzatopia - your ultimate quizzing hub! Explore a world of free quizzes to prepare for your exams and expand your knowledge. Join now, compete, earn points, and unlock achievements. Sign up today and embark on your quizzing journey!">
+<meta itemprop="name" content="Quizzatopia">
+<meta property="og:title" content="Quizzatopia - Explore a World of Quizzes">
+<meta property="og:image" content="https://www.quizzatopia.com/images/logo.png">
+<meta name="Distribution" content="Global" />
+<meta name="Rating" content="General" />
+<meta name="copyright" content="Quizzatopia">
+<meta name="language" content="English">
+<meta name="reply-to" content="quizzatopia@gmail.com">
+<meta name="generator" content="Adobe Dreamweaver">
+<meta name="Developer" content="Ron Wilson II">
+<!-- Links to favicon images for various devices -->
+<link rel="icon" sizes="192x192" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="apple-touch-icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"> <!-- Alternate link to favicon image -->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <!-- Required for mobile devices -->
+<meta property="og:type" content="website">
+<meta property="og:description" content="Welcome to Quizzatopia - the ultimate destination for all your quizzing needs. Explore a world of quizzes like never before, ranging from fun trivia to professional exam preparation. With our user-friendly interface and extensive question bank, learning has never been more enjoyable. Join now to compete with others, earn points, and unlock achievements. Sign up, log in, and embark on your quizzing journey today!">
+<meta name="keywords" content="quizzing, quizzes, learning, education, fun, trivia, exam preparation, sign up, log in, compete, points, achievements">
+<meta property="og:url" content="https://www.quizzatopia.com">
+<meta name="robots" content="index,follow">
+	<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Quizzatopia">
+<meta name="twitter:title" content="Quizzatopia - Explore a World of Quizzes">
+<meta name="twitter:description" content="Welcome to Quizzatopia - the ultimate destination for all your quizzing needs. Explore a world of quizzes like never before, ranging from fun trivia to professional exam preparation. With our user-friendly interface and extensive question bank, learning has never been more enjoyable. Join now to compete with others, earn points, and unlock achievements. Sign up, log in, and embark on your quizzing journey today!">
+<meta name="twitter:image" content="https://www.quizzatopia.com/images/logo.png">
+<meta name="twitter:url" content="https://www.quizzatopia.com">
+
+<!-- Open Graph metadata for Facebook -->
+<meta property="og:site_name" content="Quizzatopia">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="description" content="Welcome to Quizzatopia - the ultimate destination for all your quizzing needs. Explore a world of quizzes like never before, ranging from fun trivia to professional exam preparation. With our user-friendly interface and extensive question bank, learning has never been more enjoyable. Join now to compete with others, earn points, and unlock achievements. Sign up, log in, and embark on your quizzing journey today!">
+<meta itemprop="image" content="https://www.quizzatopia.com/images/logo.png">
+
+<!-- Search engine verification -->
+<meta name="google-site-verification" content="your-verification-code">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.quizzatopia.com">
+
+<!-- Author information -->
+<meta name="author" content="Ron Wilson II">
+<meta name="contact" content="quizzatopia@gmail.com">
+
+<!-- Page-specific metadata -->
+<meta name="subject" content="Quizzatopia Platform">
+<meta name="topic" content="Quizzing, Education, Learning, Quizzes">
+<meta name="geo.placename" content="Dallas, TX">
+<meta name="geo.region" content="US-TX">
+
+<!-- Language and content type -->
+<meta name="content-language" content="en-US">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Caching and expiration -->
+<meta http-equiv="expires" content="Tue, 01 Jan 2024 00:00:00 GMT">
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+	  
+<meta name="yandex-verification" content="d0fa24f78291f2fa" />
+
+	  
+	  
+    <!-- Organization Schema -->
+   <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Quizzatopia",
+  "description": "Quizzatopia is an online platform dedicated to providing a diverse range of quizzes for individuals of all ages and backgrounds.",
+  "url": "https://www.quizzatopia.com",
+  "logo": "https://www.quizzatopia.com/images/logo.png",
+  "sameAs": [
+    "https://twitter.com/Quizzatopia",
+    "https://www.facebook.com/Quizzatopia",
+    "https://www.linkedin.com/company/quizzatopia",
+    "https://www.reddit.com/r/Quizzatopia",
+    "https://www.youtube.com/@Quizzatopia/about",
+    "https://www.tiktok.com/@quizzatopia",
+    "https://www.instagram.com/Quizzatopia"
+  ]
+}
+ </script>
+
+
+
+    <!-- Blog Schema -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Quizzatopia Blog",
+        "description": "The official blog of Quizzatopia, providing additional quiz-related content and insights.",
+        "url": "https://quizzatopia.blogspot.com"
+    }
+ </script>
+
+  
+
+	  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Quizzatopia",
+  "url": "https://www.quizzatopia.com",
+  "description": "Quizzatopia is an online platform dedicated to providing a diverse range of quizzes for individuals of all ages and backgrounds.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.quizzatopia.com/quiz?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "sameAs": [
+    "https://twitter.com/Quizzatopia",
+    "https://www.facebook.com/Quizzatopia",
+    "https://www.linkedin.com/company/quizzatopia",
+    "https://www.reddit.com/r/Quizzatopia",
+    "https://www.youtube.com/@Quizzatopia",
+    "https://www.tiktok.com/@quizzatopia",
+    "https://www.instagram.com/Quizzatopia"
+  ]
+}
+</script>
+
+
+	  
+	  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.quizzatopia.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quizzes",
+      "item": "https://www.quizzatopia.com/quizzes"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "About",
+      "item": "https://www.quizzatopia.com/about"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Quiz",
+      "item": "https://www.quizzatopia.com/quiz"
+    }
+  ]
+}
+</script>
+
+
+	  
+	  
+	
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "Can I play Quizzatopia quizzes offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quizzatopia quizzes are primarily online, allowing you to access them anytime, anywhere with an internet connection. However, you can try our downloadable quiz packs, which you can play offline at your convenience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are new quizzes added to Quizzatopia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We strive to keep our quiz collection fresh and engaging. New quizzes are added regularly to Quizzatopia, ensuring that there's always something new for you to explore and enjoy. Check back often to discover the latest additions!"
+      }
+    },
+      {
+      "@type": "Question",
+      "name": "Can I take quizzes for exams for free on Quizzatopia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Quizzatopia provides a wide range of quizzes to help you prepare for exams at no cost. You can access and attempt these quizzes for various exams without any subscription or payment. Start practicing and boost your exam readiness with our free quizzes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which exams can I find quizzes for on Quizzatopia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quizzatopia offers quizzes for a diverse range of exams, including but not limited to: SAT, ACT, GRE, GMAT, TOEFL, IELTS, MCAT, LSAT, Bar Exam, PMP, and many more. We cover a wide array of academic, professional, and certification exams to cater to various educational needs."
+      }
+    },
+     {
+      "@type": "Question",
+      "name": "What are some popular exams for college admissions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Popular college admissions exams include the SAT, ACT, and TOEFL. These exams assess the readiness and skills of students applying for undergraduate programs and are widely recognized by universities and colleges worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there quizzes available for the GRE (Graduate Record Examination)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Quizzatopia provides quizzes to help you prepare for the GRE. Our GRE quizzes cover verbal reasoning, quantitative reasoning, and analytical writing sections, helping you familiarize yourself with the exam format and improve your performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find quizzes for the PMP (Project Management Professional) exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Quizzatopia offers quizzes specifically designed to help you prepare for the PMP exam. Our PMP quizzes cover the knowledge areas and processes outlined in the PMBOK (Project Management Body of Knowledge), enhancing your chances of success in the exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which exams does Quizzatopia provide quizzes for in the medical field?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quizzatopia offers quizzes for a range of medical exams, such as the MCAT (Medical College Admission Test), USMLE (United States Medical Licensing Examination), and NCLEX (National Council Licensure Examination). These quizzes cover various medical disciplines and help you prepare for your medical career."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there quizzes available for different subjects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Quizzatopia offers a wide range of quiz categories, including general knowledge, pop culture, science, history, sports, and more. Whether you're a trivia enthusiast or studying for an exam, we've got quizzes to suit your interests and needs."
+      }
+    },
+        {
+      "@type": "Question",
+      "name": "What types of quizzes are available on Quizzatopia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quizzatopia offers a wide range of quizzes covering various categories such as Marketing, Information Technology, Design, Healthcare, Finance, Fitness, Driving, Cooking, Military, Law, Project Management, Architecture, Business, Real Estate, English Language Arts, World History, Chemistry, and more. Each category includes quizzes that test your knowledge and skills in specific areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the quizzes on Quizzatopia cover tests and exams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Quizzatopia includes quizzes that cover tests and exams in different fields. Whether you're preparing for professional certifications, entrance exams, or standardized tests, you can find quizzes that help you assess your knowledge, practice exam-style questions, and prepare for success."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can the quizzes on Quizzatopia help me prepare for tests and exams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The quizzes on Quizzatopia are designed to help you enhance your understanding of specific subjects and improve your test-taking skills. They cover important topics, provide practice questions similar to those found in actual tests and exams, and offer explanations and feedback to help you learn from your mistakes. By taking these quizzes, you can assess your readiness, identify areas for improvement, and build confidence for your upcoming tests and exams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find quizzes for the CFA (Chartered Financial Analyst) exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quizzatopia offers quizzes designed to assist you in preparing for the CFA exam. Our CFA quizzes cover topics like ethics, quantitative methods, economics, financial reporting, and more, helping you master the knowledge required for this prestigious financial certification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I take quizzes to prepare for the CCNA (Cisco Certified Network Associate) exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Quizzatopia provides quizzes to help you prepare for the CCNA exam. Our CCNA quizzes cover networking concepts, routing and switching, IP addressing, and other key topics to ensure you're ready to pass this renowned certification for network professionals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find quizzes for the AWS Certified Solutions Architect exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quizzatopia offers quizzes specifically designed to help you prepare for the AWS Certified Solutions Architect exam. Our quizzes cover cloud architecture, AWS services, security, and other relevant topics, equipping you with the knowledge needed to excel in this in-demand certification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there quizzes available for the CompTIA A+ certification exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Quizzatopia provides quizzes to help you prepare for the CompTIA A+ certification exam. Our quizzes cover hardware, software, troubleshooting, and other essential areas, allowing you to gain the skills and knowledge required for a successful career in IT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track my progress and see my quiz results on Quizzatopia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Quizzatopia provides features that allow you to track your progress and view your quiz results. Upon completion of a quiz, you will receive a detailed breakdown of your performance, including your score, correct answers, and areas for improvement. You can track your overall progress, compare your scores with other users, and strive for better results as you continue to take quizzes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Quizzatopia suitable for all age groups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Quizzatopia caters to individuals of all ages and backgrounds. We have quizzes designed specifically for kids, as well as more challenging quizzes for adults. It's a platform where everyone can learn, have fun, and expand their knowledge."
+      }
+    }
+  ]
+}
+</script>
+	  
+	  
+	  
+	
+		<!-- google ad sense code -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4968673576211489"
+     crossorigin="anonymous"></script>
+
+	  
+	  	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+	  
+	
+
+	  
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/index/Homestyle.css" />
+
+	  
+
+	  
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VG78SV9KZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9VG78SV9KZ');
+</script>
+	
+
+	
+	
+<body>
+  <div id="navbar"></div>
+    <!-- rest of the page content -->
+  
+	  <div class="overlay"></div>
+
+
+  
+<div class="featured-quizzes-container">
+  <div class="carousel_top">
+  
+    <!-- Add more quiz cards as needed -->
+  </div>
+</div>
+
+  
+	
+	
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Welcome to Quizzatopia!</h1>
+        <p>Explore a world of quizzes like never before with Quizzatopia - the ultimate destination for all your quizzing needs. From fun trivia to professional exam preparation, Quizzatopia has it all. With our user-friendly interface and extensive question bank, learning has never been more enjoyable. So, step into the world of quizzes with Quizzatopia and discover the thrill of learning through quizzing.</p>
+        <a href="quizzes" class="btn btn-primary ctaBTN">Discover Your Knowledge!</a>
+	      
+ 
+	      
+	      
+	      
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <img src="/images/sq/33.png" alt="Quiz Platform Image" class="img-fluid" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+<div class="container shadow py-4">
+  <div class="row">
+    <div class="col-md-6 d-none d-md-block">
+      <!-- Empty div on the left -->
+	    
+	    
+	    
+	<section class="container">
+		  <h2>Website Updates</h2>
+
+  <h4>Exciting New Question Types Coming to Our Quiz Website!</h4>
+  <p>We are thrilled to announce that we are expanding the question types available on our quiz website to make your learning experience even more engaging and interactive. Get ready to explore the following new question formats:</p>
+  
+  <ol>
+    <li>
+      <h2>True/False Questions:</h2>
+      <p>Test your knowledge with true/false questions that require you to determine the accuracy of statements. Sharpen your critical thinking skills by evaluating the validity of each statement and selecting the correct answer.</p>
+    </li>
+    <li>
+      <h2>Fill in the Blank:</h2>
+      <p>Challenge yourself with fill in the blank questions that will put your recall and comprehension abilities to the test. Complete sentences or phrases by filling in the missing words, reinforcing your understanding of key concepts.</p>
+    </li>
+    <li>
+      <h2>Drag and Drop Questions:</h2>
+      <p>Prepare for a unique interactive experience with drag and drop questions. These questions will require you to match and arrange items by dragging them to their correct positions. Enhance your cognitive skills and spatial reasoning while having fun!</p>
+    </li>
+    <li>
+      <h2>Image-Based Questions:</h2>
+      <p>Visual learners, rejoice! We are introducing image-based questions that will utilize visuals to enhance your quiz experience. You'll encounter questions where you have to identify objects, diagrams, or interpret charts and images.</p>
+    </li>
+    <li>
+      <h2>Sorting Questions:</h2>
+      <p>Take your thinking to the next level with sorting questions. These intriguing challenges will require you to arrange items or concepts in the correct order, allowing you to demonstrate your ability to analyze and categorize information effectively.</p>
+    </li>
+  </ol>
+  
+  <p>We believe that these new question types will bring diversity and excitement to your learning journey, making it even more enjoyable and interactive. Stay tuned as we roll out these features and expand our question bank to cover a wide range of topics.</p>
+  
+  <p>Your feedback and suggestions have always been invaluable to us, and we can't wait to hear your thoughts on these new question formats. Together, let's explore, learn, and have a blast on our quiz platform!</p>
+  
+  <p>Keep an eye out for updates and happy quizzing! 🌟🧠</p>
+</section>
+	     
+
+	    
+	    
+	      
+    </div>    
+	  <style>
+  /* Styling for the creative "Sign Up" button */
+  .signup-button {
+    position: relative;
+    display: inline-block;
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+  }
+
+  .signup-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff8c00;
+    opacity: 0.2;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .signup-button:hover {
+    background-color: #f96800;
+  }
+
+  .signup-button:hover:before {
+    transform: translateY(0);
+  }
+
+  .signup-button span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .signup-button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: radial-gradient(#fff, transparent);
+    transform: scale(1.4);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+</style>
+	  
+    <div class="col-md-6 px-4">
+	
+
+
+<button id="mainSignupBtn" class="signup-button" onclick="openPopup(); switchTab('signup'); "><span>Sign Up</span></button>
+ 
+	    
+  <hr>
+
+	    
+	    
+	    
+  <section class="call-to-action">
+  <div class="container">
+    <h2>Discover Your Knowledge!</h2>
+    <p>Challenge yourself with our quizzes and explore new horizons.</p>
+    <a id="mainCTA" href="quiz" class="btn btn-primary">Take a Quiz Now</a>
+  </div>
+</section>
+	  
+	 
+	    
+	    
+	    
+	        	  <section class="quiz-recommendations">
+  <div class="container">
+	  <h2>Latest Quizzes Taken</h2>
+	    <hr>
+    <div class="quiz-info-container" id="quizInfoContainer">
+	    No Quiz History
+	    
+	    
+	    
+	    
+      <!-- Quiz recommendation elements will be dynamically added here -->
+    </div>
+  </div>
+</section>
+	   
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	
+	  </div>
+	 
+
+	  
+
+	  
+	  
+	  
+	
+
+	 
+	  
+	
+	<section class="quiz-categories">
+  <div class="container">
+    <h2>Quiz Categories</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="https://www.quizzatopia.com/quizzes#information_technology" class="category-link">
+          <div class="category-card">
+            <img src="https://www.quizzatopia.com/images/sq/15.png" alt="Information Technology Category" class="category-image">
+            <h3>Information Technology</h3>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://www.quizzatopia.com/quizzes#healthcare" class="category-link">
+          <div class="category-card">
+            <img src="https://www.quizzatopia.com/images/sq/24.png" alt="Healthcare Category" class="category-image">
+            <h3>Healthcare</h3>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://www.quizzatopia.com/quizzes#business" class="category-link">
+          <div class="category-card">
+            <img src="https://www.quizzatopia.com/images/sq/9.png" alt="Bussiness Category" class="category-image">
+            <h3>Business</h3>
+          </div>
+        </a>
+      </div>
+      <!-- Add more category cards as needed -->
+    </div>
+  </div>
+</section>
+
+	  
+	  
+	  
+	
+	  </div>
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+  
+ <div class="container py-4">
+  <div id="quiz-carousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#quiz-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#quiz-carousel" data-slide-to="1"></li>
+      <li data-target="#quiz-carousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- Add more review cards here -->
+    <!-- Add more review cards here -->
+    <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+           <img src="/images/pics/6.png" class="card-img-top review" alt="Profile Picture 5">
+          <div class="card-body">
+            <h5 class="card-title">Emily Davis</h5>
+            <p class="card-text">Quizzatopia is my favorite platform for quizzes. It's informative, entertaining, and keeps me hooked!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+           <img src="/images/pics/14.png" class="card-img-top review" alt="Profile Picture 8">
+          <div class="card-body">
+            <h5 class="card-title">Daniel Adams</h5>
+            <p class="card-text"> The quizzes cover a wide range of topics and have significantly helped me with my biology and chemistry exams.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/1.png" class="card-img-top review" alt="Profile Picture 9">
+          <div class="card-body">
+            <h5 class="card-title">Sophie Thompson</h5>
+            <p class="card-text">As a medical student, Quizzatopia has become an indispensable tool in my studies.  It's like having a personal tutor guiding me through my exams. Highly recommended!</p>
+          </div>
+        </div>
+      </div>
+	          <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center"  style="min-width: 250px !important;">
+
+
+				          <!-- nothingg here -->
+
+	 </div>	
+	 </div>	
+		
+		
+		
+		
+		          <!--  more review cards here -->
+
+        </div>
+      </div>
+      <div class="carousel-item">
+	      
+	      
+	      
+     <!-- Add more review cards here -->
+    <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+         <img src="/images/pics/9.png" class="card-img-top review" alt="Profile Picture 6"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Michael Johnson</h5>
+            <p class="card-text">Quizzatopia has been a great learning resource for me. The quizzes are well-structured and highly informative. </p>
+          </div>
+        </div>
+      </div>
+      <!-- Add more review cards here -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/4.png" class="card-img-top review" alt="Profile Picture 11"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Jessica Nguyen</h5>
+            <p class="card-text">Quizzatopia has made learning fun and interactive. The quizzes are challenging and help me retain information effectively.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/3.png" class="card-img-top review" alt="Profile Picture 12"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">David Wilson</h5>
+            <p class="card-text">They have become an essential tool in my exam preparation, especially for my upcoming biology and chemistry exams. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/13.png" class="card-img-top review" alt="Profile Picture 13"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Olivia Smith</h5>
+            <p class="card-text">I can't recommend Quizzatopia enough! </p>
+          </div>
+        </div>
+      </div>
+		
+		
+	
+		
+          <!--  more review cards here -->
+        </div>
+      </div>
+      <div class="carousel-item">
+	      
+	      
+       <!-- Add more review cards here -->
+    <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4968673576211489"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-ct-2j-2v-7o+14r"
+     data-ad-client="ca-pub-4968673576211489"
+     data-ad-slot="6079800298"></ins>
+		
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/7.png" class="card-img-top review" alt="Profile Picture 14"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Noah Thompson</h5>
+            <p class="card-text">Quizzatopia is a game-changer for exam preparation! Give it a try!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/16.png" class="card-img-top review" alt="Profile Picture 15"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Ava Davis</h5>
+            <p class="card-text">I can't express how much I love Quizzatopia!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center">
+          <img src="/images/pics/11.png" class="card-img-top review" alt="Profile Picture 16"  loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Ethan Martinez</h5>
+            <p class="card-text">Quizzatopia is a must-have for any student!</p>
+          </div>
+        </div> 
+      </div>
+		
+		
+	
+          <!--  more review cards here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#quiz-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#quiz-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+	
+
+	</div>
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<style>
+	.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner_logo {
+    /* width: 80px; */
+    /* height: 80px; */
+    /* background-image: url(/images/logo.png); */
+    /* background-size: cover; */
+}
+
+#onetrust-policy-text {
+      margin-bottom:: 5%;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+#onetrust-policy-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#onetrust-policy-text a:hover {
+  text-decoration: underline;
+}
+
+#onetrust-accept-btn-handler {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#onetrust-accept-btn-handler:hover {
+  background-color: #0056b3;
+}
+
+.onetrust-close-btn-handler {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  outline: none;
+}
+
+	
+	
+	
+	</style>
+	
+<div role="alertdialog" aria-describedby="onetrust-policy-text" aria-label="Privacy" class="cookie-banner">
+  <div class="ot-sdk-container">
+    <div class="ot-sdk-row">
+      <div id="onetrust-group-container" class="ot-sdk-eight ot-sdk-columns">
+        <div class="banner_logo"></div>
+        <div id="onetrust-policy">
+          <p id="onetrust-policy-text">
+            By clicking "Allow", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+            <a href="./legal/cookies" aria-label="More information about your privacy">Cookie Notice</a>
+          </p>
+        </div>
+      </div>
+      <div id="onetrust-button-group-parent" class="ot-sdk-three ot-sdk-columns">
+        <div id="onetrust-button-group">
+          <button id="onetrust-accept-btn-handler">Allow</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="onetrust-close-btn-container">
+    <button class="onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon" style='' aria-label="Close"></button>
+  </div>
+</div>
+
+<script>
+  // Function to save user's preference
+  function saveCookieConsent() {
+    localStorage.setItem('cookieConsent', 'true');
+  }
+
+  // Function to check if user has given consent
+  function hasCookieConsent() {
+    return localStorage.getItem('cookieConsent') === 'true';
+  }
+
+  // Function to remove the cookie consent banner
+  function removeCookieBanner() {
+    const cookieBanner = document.querySelector('.cookie-banner');
+    cookieBanner.remove();
+  }
+
+  // Event listener for clicking "Allow All" button
+  const acceptBtn = document.getElementById('onetrust-accept-btn-handler');
+  acceptBtn.addEventListener('click', function () {
+    saveCookieConsent();
+    removeCookieBanner();
+  });
+
+  // Check if user has given consent
+  if (hasCookieConsent()) {
+    removeCookieBanner();
+  }
+	
+	
+	</script>
+	
+	<script>
+	  if (Loggedin === "true") {
+ document.getElementById('mainSignupBtn').innerHTML =  "";
+	  }	
+		
+		
+		
+// Function to open the login/signup popup
+function openPopup() {
+  document.getElementById('loginPopup').classList.remove('d-none');
+}
+
+// Function to close the login/signup popup
+function closePopup() {
+  document.getElementById('loginPopup').classList.add('d-none');
+}
+
+// Function to switch between login and signup tabs
+function switchTab(tabName) {
+  document.getElementById('loginTab').style.display = tabName === 'login' ? 'block' : 'none';
+  document.getElementById('signupTab').style.display = tabName === 'signup' ? 'block' : 'none';
+}
+
+// Fetch the popup HTML dynamically and append it to the signupLoginArea element
+fetch('./auth/index.html')
+  .then(response => response.text())
+  .then(data => {
+    const signupLoginArea = document.querySelector('#signupLoginArea');
+	signupLoginArea.innerHTML += data;
+signupLoginArea.display = "none";
+  });
+
+</script>
+
+
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+ <link rel="stylesheet" href="/auth/authStyle.css" />
+	
+	<script>
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC8PYJV5-E6hIYbElsgb5e7MOS0faCiLM4",
+  authDomain: "quizzatopia-bdfc9.firebaseapp.com",
+  projectId: "quizzatopia-bdfc9",
+  storageBucket: "quizzatopia-bdfc9.appspot.com",
+  messagingSenderId: "828105067102",
+  appId: "1:828105067102:web:76afb989ed7c03ebb542cf",
+  measurementId: "G-J3QK9V5480"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the Firestore database
+const firestore = firebase.firestore();
+</script>
+
+	<script type="module" src="/auth/auth.js"></script>
+
+		<div id="signupLoginArea" ><div>
+
+
+<script>
+	
+
+	
+
+ // Get a reference to the Firestore database
+//  const db = firebase.firestore();
+
+  // Create a collection called "users" (if it doesn't exist already)
+  //const usersCollection = db.collection('users');
+
+	
+	
+	// Assuming you have already initialized the Firestore SDK and have access to the Firestore database
+
+/
+	
+	
+	
+	
+	
+/*
+// Add users to Firestore database
+users.forEach(user => {
+  firestore.collection('users').add(user)
+    .then(function(docRef) {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch(function(error) {
+      console.error('Error adding document: ', error);
+    });
+});
+*/
+
+    console.log('xxx  ????????????????????????????????????????????????????????');
+
+			</script>
+
+		
+
+
+	
+	
+  </body>
+  <div id="mainFooter"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+	  
+	
+ <script src="/js/load.js"></script>
+	
+  
+	  
+	<script src="helpScript.js"></script>
+
+	<script src="/index/main.js"></script>
+
+      	    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="Quizzatopia" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting our website! We appreciate your time and hope you had a great experience. If you have any feedback or questions, feel free to reach out to us. We look forward to seeing you again soon!" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard  | Quizzatopia Platform</title>
+
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/style.css" />
+  
+    <link rel="import" href="./elements/navbar.html">
+    <link rel="import" href="./elements/footer.html">
+	   <style>
+    /* Custom Styles */
+
+		   
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .leaderboard-title {
+      color: #4267B2;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .leaderboard-table th {
+      background-color: #4267B2;
+      color: #fff;
+    }
+
+    .leaderboard-table tbody tr:hover {
+      background-color: #f0f2f5;
+      cursor: pointer;
+    }
+  </style>
+    </head>
+ <script src="/js/load.js"></script>
+
+<body>
+  <div id="navbar"></div>
+    <!-- rest of the page content -->
+  	<style>
+	
+
+		.shadow {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+	</style>
+
+<div class="container shadow py-4">
+  	
+	
+	
+	<div class=" order-lg-2">
+      <img src="/images/lan/38.png" alt="Quiztopia Platform" class="img-fluid w-100">
+    </div>
+	
+ <!-- Profile container -->
+  <div class="container">
+    <!-- ...previous profile content... -->
+
+	  
+        <div class="row">
+      <div class="col-lg">
+        <!-- Profile Info -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Profile Info</h5>
+            <!-- Your profile content goes here -->
+		  
+		   <tr onclick="viewUserProfile('${userName}')">
+            <td id="uRank"></td>
+            <td>
+              <img src="" alt="" class="rounded-circle mr-2" style="width: 100px; height: 100px;"  id="uPic">
+            
+            </td>
+            <td class="text-right"  id="uPoints"></td>
+          </tr>	  
+		  
+		  
+		  
+          </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title leaderboard-title">Leaderboard</h5>
+            <!-- Buttons to switch leaderboards -->
+            <div class="btn-group w-100 mb-3">
+              <button class="btn btn-primary" onclick="loadLeaderboard('userRank')">Global</button>
+              <button class="btn btn-primary" onclick="loadLeaderboardGet('userState')">Local</button>
+              <button class="btn btn-primary" onclick="loadLeaderboardGet('userCity')">Area</button>
+            </div>
+            <!-- Leaderboard table -->
+            <table class="table leaderboard-table w-100">
+              <thead>
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">User</th>
+                  <th scope="col" class="text-right">Points</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardBody">
+                <!-- Leaderboard rows will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Ads or additional content -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Ads</h5>
+            <!-- Your ads content goes here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	
+	
+  </div>
+	
+	
+	
+	
+	  <script>
+		    const lbUserInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+
+    console.log('lbUserInfo ', lbUserInfo);
+		  
+		  // Update HTML elements with user information
+//document.getElementById('uName').innerHTML = lbUserInfo.userName;
+document.getElementById('uRank').innerHTML = lbUserInfo.rank;
+document.getElementById('uPoints').innerHTML = lbUserInfo.points;
+    console.log('state ', lbUserInfo.state);
+    console.log('city ', lbUserInfo.city);
+// document.getElementById('uQuzziesTaken').innerHTML = lbUserInfo.quizzesTaken;
+
+document.getElementById('uPic').src = lbUserInfo.profilePic;
+	  
+	</script>
+	
+	
+	<!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  
+  <script>
+		   
+	  
+
+
+  // Display additional user information as needed
+
+		 
+	  
+const firebaseConfig = {
+  apiKey: "AIzaSyC8PYJV5-E6hIYbElsgb5e7MOS0faCiLM4",
+  authDomain: "quizzatopia-bdfc9.firebaseapp.com",
+  projectId: "quizzatopia-bdfc9",
+  storageBucket: "quizzatopia-bdfc9.appspot.com",
+  messagingSenderId: "828105067102",
+  appId: "1:828105067102:web:76afb989ed7c03ebb542cf",
+  measurementId: "G-J3QK9V5480"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the Firestore database
+const firestore = firebase.firestore();
+
+	  
+	  
+	  
+	  
+	  
+	function loadLeaderboard(loc) {
+  // Reference to the users collection in Firestore
+var usersCollection = firestore.collection('users');
+console.log('Users collection reference created.');
+
+// Query to retrieve the top 10 users sorted by city and points
+var query = usersCollection.orderBy('userPoints', 'desc').limit(10);
+//var query = usersCollection.where(loc).orderBy('userPoints', 'desc').limit(10);
+console.log('Query created:', query);
+		
+		
+  // Retrieve the sorted data
+  query.get()
+    .then(function(querySnapshot) {
+      console.log('Query executed successfully.');
+
+      // Clear the leaderboard body
+      $('#leaderboardBody').empty();
+      console.log('Leaderboard body cleared.');
+
+      // Loop through the retrieved data and add rows to the leaderboard table
+      querySnapshot.forEach(function(doc) {
+        var userInfo = doc.data();
+        var rank = userInfo.userRank;
+        var userPicture = userInfo.userProfilePic;
+        var userName = userInfo.userName;
+        var points = userInfo.userPoints;
+
+        // Construct the row HTML
+        var rowHtml = `
+       <tr onclick="viewUserProfile('${userName}')" style="cursor: pointer; background-color: #f7f7f7;">
+  <td style="padding: 10px; font-size: 18px; color: #555;">${rank}</td>
+  <td style="padding: 10px;">
+    <div style="display: flex; align-items: center;">
+      <div style="width: 75px; height: 75px; overflow: hidden; border-radius: 50%; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <img src="${userPicture}" alt="${userName}" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="font-size: 16px; color: #333; font-weight: bold;">${userName}</div>
+    </div>
+  </td>
+  <td class="text-right" style="padding: 10px; font-size: 18px; color: #555;">${points}</td>
+</tr>`;
+
+
+        // Add the row to the leaderboard body
+        $('#leaderboardBody').append(rowHtml);
+      });
+
+      console.log('Data added to the leaderboard table.');
+    })
+    .catch(function(error) {
+      console.log('Error occurred while fetching leaderboard data: ', error);
+    });
+}
+
+
+
+    // Function to view user profile when a row is clicked
+    function viewUserProfile(userName) {
+      // Perform an action to view the user's profile
+      console.log("Viewing user profile: " + userName);
+      // You can replace the console.log statement with your desired action to view the user's profile.
+    }
+	  
+	  
+
+
+	  function loadLeaderboardGet(xxx){
+		  
+    console.log(xxx+' ', lbUserInfo.xxx);
+		  
+ loadLeaderboard(xxx+'='+lbUserInfo.xxx);
+	  }
+	  
+	loadLeaderboard('userCountry='+lbUserInfo.userCountry);
+  
+  </script>
+
+      
+	
+	
+	
+   		  </body>
+	  <div id="mainFooter"></div>
+	  
+ 
+      
+      
+      
+      
+      
+      
+      
+    <script src="/helpScript2.js"></script>
+  
+
+</html>

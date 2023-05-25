@@ -1,0 +1,320 @@
+<script>
+if (window.location.pathname.substr(-5) === '.html' && window.location.pathname.length > 5) {
+  var newPath = window.location.pathname.slice(0, -5);
+  window.history.replaceState({}, '', newPath);
+}
+	
+	
+	
+	
+	
+	
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...your-integrity-hash..." crossorigin="anonymous" />
+<!-- Enhanced navbar -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+ 
+
+
+<!-- Enhanced navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="/">Quizzatopia</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/quiz">Quiz</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/quizzes">Quizzes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+    <form class="form-inline my-2 my-lg-0 search-bar d-none">
+      <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search quizzes" aria-label="Search">
+      <button onclick="search()">Search</button>
+      <div id="searchResults"></div>
+    </form>
+    <!-- Profile pic and name area -->
+    <div class="profile-area">
+      <img id="profile-pic" src="/images/avatar/w1.png" alt="Profile Picture" class="profile-pic" loading="lazy">
+      <a id="profile-name" class="profile-name" href="/user/">Dashboard</a>
+    </div>
+    <!-- Sign-up and Log-in buttons -->
+    <div class="auth-buttons">
+           <div id='navLoggedin' </div>
+
+    </div>
+  </div>
+</nav>
+<div id="search-results" class="container mt-4"></div>
+
+
+
+
+
+
+
+<!-- JavaScript code to check if user is logged in and update profile name and link -->
+<script>
+
+
+
+
+
+
+
+
+  const USER_INFO_KEY = 'userInfo';
+  const USER_NAME_KEY = 'userName';
+  const PROFILE_PIC_KEY = 'profilePic';
+const RANK_KEY = 'rank';
+const POINTS_KEY = 'points';
+const QUIZZES_TAKEN_KEY = 'quizzesTaken';
+// Add more keys for additional user information as needed
+  
+  /*
+  
+  // Check if the user is logged in (you can replace this with your own logic)
+  var isLoggedIn = false;
+
+  // Function to update profile name and link
+  function updateProfileInfo() {
+    var profileName = document.getElementById('profile-name');
+    var profileLink = document.createElement('a');
+    profileLink.className = 'profile-link';
+    profileLink.textContent = isLoggedIn ? 'Profile' : 'Login';
+    profileLink.href = isLoggedIn ? '/user/' : '/login/';
+    profileLink.setAttribute('role', 'button');
+
+    profileName.innerHTML = '';
+    profileName.appendChild(profileLink);
+  }
+
+  // Call the function to update profile name and link
+ // updateProfileInfo();
+  
+  */
+
+  // Display additional user information as needed
+
+	
+
+function search() {
+  var searchQuery = document.getElementById("searchInput").value.toLowerCase();
+  var resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = ""; // Clear previous results
+
+  // Perform search logic here
+  fetch("quiz/search.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var matches = performSearchLogic(searchQuery, data);
+
+      if (matches.length === 0) {
+        resultsContainer.innerHTML = "No results found.";
+      } else {
+        var html = "";
+
+        matches.forEach(function (match) {
+          html += "<div>";
+          html += "<h3>" + match.quizName + "</h3>";
+          html += "<p>" + match.description + "</p>";
+          html += "<p>Topics: " + match.topics.join(", ") + "</p>";
+          // Add more details if needed
+          html += "</div>";
+        });
+
+        resultsContainer.innerHTML = html;
+      }
+    })
+    .catch(function (error) {
+      console.log("Error fetching JSON file:", error);
+    });
+}
+
+
+function performSearchLogic(searchQuery, jsonData) {
+  // Implement your search logic here using the jsonData
+  // Return an array of matched results
+  var matches = jsonData.filter(function (quiz) {
+    return (
+      quiz.quizName.toLowerCase().includes(searchQuery) ||
+      quiz.description.toLowerCase().includes(searchQuery) ||
+      quiz.topics.some(function (topic) {
+        return topic.toLowerCase().includes(searchQuery);
+      })
+    );
+  });
+
+  return matches;
+}
+
+  
+  
+  
+  
+  
+  
+   $(document).ready(function() {
+
+      const navUserInfo = JSON.parse(localStorage.getItem(USER_INFO_KEY));
+ console.log('navUserInfo.profilePic navbar  ', navUserInfo.profilePic);
+
+  document.getElementById('profile-pic').src = navUserInfo.profilePic;
+    });
+
+  
+  
+  
+  
+  function runWaitFunc() {
+  const toHTML = document.body;
+
+  // Add the fade-in class to the body element
+  toHTML.classList.add('fade-in');
+
+  // Wait for the transition to complete and remove the fade-in class
+  setTimeout(() => {
+    toHTML.classList.remove('fade-in');
+  }, 200);
+}
+  runWaitFunc();
+ 
+
+  
+</script>
+
+
+<style>
+	
+	#navLoggedin{
+  color: #fff;
+    margin-right: 20px;
+    font-weight: bold;
+	}
+	.fade-in {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+  .search-bar{
+     margin-right: 5%;
+}
+  
+     @media (max-width: 768px) {
+      .search-bar {
+        display: none;
+      }
+    }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #0D47A1;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav a:hover {
+    color: #ff8c00;;
+  }
+
+  .navbar-brand {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .navbar-nav {
+    text-align: right;
+  }
+
+    .nav-link {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .active .nav-link {
+    color: #F44336;
+  }
+  
+  .profile-pic {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make the profile picture circular */
+    object-fit: cover; /* Ensure the image fills the circular container */
+ 
+    border: 1px solid #0e0e0e;}
+  
+  .profile-area {
+    display: flex; /* Use flexbox to align the profile picture and name horizontally */
+    align-items: center; /* Center align vertically */
+  }
+  
+  .profile-name {
+    width: 80px; /* Adjust the width as needed */
+    color: #fff; /* Set the font color to match the navbar */
+    margin-left: 5px; /* Add some spacing between the profile picture and name */
+    font-weight: bold; /* Add the desired font weight */
+    text-decoration: none; /* Remove underline from the link */
+  }
+  
+  .profile-link {
+    color: #fff; /* Set the font color to match the navbar */
+  }
+  
+  	/* Reset styles */
+      html {
+        user-select: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+  
+  transition-duration: 0.5s; /* 500 milliseconds */
+  transition-timing-function: ease-in-out;
+}
+
+      /* Global styles */
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+  
+    width: 100% !important;
+      }
+
+#footer_XL {
+  flex-shrink: 0;
+}
+      .container {
+        flex: 1;
+      }
+
+
+  
+  
+</style>
